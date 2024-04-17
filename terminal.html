@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>piqle's js webterminal</title>
+  <title>piqle's terminal</title>
+  <link rel="icon" type="image/png" href="https://piqle.org/img/computer%20242.gif" />
   <style>
     body {
       background-color: #000;  /* Black background */
@@ -26,7 +28,7 @@
 </head>
 <body>
 
-  <div class="prompt">root@piqle.org:~ $ </div>
+  <div class="prompt">usr@piqle.org:~ $ </div>
   <input type="text" class="input" autofocus> 
 
 </body>
@@ -55,7 +57,7 @@ function processCommand(cmd) {
       response = "Available commands: help, about, time, clear, exit, google, youtube, github, twitter, \n facebook, reddit, wikipedia, amazon, ebay, walmart, target, bestbuy, gamestop, newegg, microcenter";
       break;
     case 'about':
-      response = "javascript project by piqle. opens links n stuff.";
+      response = "js-webterm project by piqle. opens links n stuff. more info: https://github.com/piqle/js-webterm";
       break;
     case 'google':
       response = open("https://google.com/");
