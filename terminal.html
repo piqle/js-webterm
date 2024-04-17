@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>piqle's terminal</title>
-  <link rel="icon" type="image/png" href="https://piqle.org/img/computer%20242.gif" />
+  <title>js-webterm</title>
   <style>
     body {
       background-color: #000;  /* Black background */
@@ -35,10 +34,8 @@
 </html>
 
 <script>
-  // Place this within a <script> tag in your HTML file
-
 const inputField = document.querySelector('.input');
-const outputArea = document.body; // We'll append responses to the body
+const outputArea = document.body; 
 
 inputField.addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
