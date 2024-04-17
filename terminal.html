@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>piqle's js webterminal</title>
+  <style>
+    body {
+      background-color: #000;  /* Black background */
+      color: #00FF00;         /* Classic green text */
+      font-family: monospace; 
+      margin: 0;
+      padding: 20px;
+    }
+
+    .prompt {
+      display: inline-block;
+    }
+
+    .input {
+      background-color: transparent;
+      border: none;
+      color: #00FF00;
+      font-family: monospace; 
+      outline: none;       /* Remove default focus outline */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="prompt">root@piqle.org:~ $ </div>
+  <input type="text" class="input" autofocus> 
+
+</body>
+</html>
+
+<script>
+  // Place this within a <script> tag in your HTML file
+
+const inputField = document.querySelector('.input');
+const outputArea = document.body; // We'll append responses to the body
+
+inputField.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    const command = inputField.value.toLowerCase(); 
+    inputField.value = ''; // Clear input field
+
+    processCommand(command); 
+  }
+});
+
+function processCommand(cmd) {
+  let response;
+
+  switch (cmd) {
+    case 'help':
+      response = "Available commands: help, about, time, clear, exit, google, youtube, github, twitter, \n facebook, reddit, wikipedia, amazon, ebay, walmart, target, bestbuy, gamestop, newegg, microcenter";
+      break;
+    case 'about':
+      response = "javascript project by piqle. opens links n stuff.";
+      break;
+    case 'google':
+      response = open("https://google.com/");
+      break;
+    case 'youtube':
+      response = open("https://youtube.com/");
+      break;
+    case 'github':
+      response = open("https://github.com/");
+      break;
+    case 'twitter':
+      response = open("https://twitter.com/");
+      break;
+    case 'facebook':
+      response = open("https://facebook.com/");
+      break;
+    case 'reddit':
+      response = open("https://reddit.com/");
+      break;
+    case 'wikipedia':
+      response = open("https://wikipedia.org/");
+      break;
+    case 'amazon':
+      response = open("https://amazon.com/");
+      break;
+    case 'ebay':
+      response = open("https://ebay.com/");
+      break;
+    case 'walmart':
+      response = open("https://walmart.com/");
+      break;
+    case 'target':
+      response = open("https://target.com/");
+      break;
+    case 'bestbuy':
+      response = open("https://bestbuy.com/");
+      break;
+    case 'gamestop':
+      response = open("https://gamestop.com/");
+      break;
+    case 'newegg':
+      response = open("https://newegg.com/");
+      break;
+    case 'microcenter':
+      response = open("https://microcenter.com/");
+      break;
+    case 'amazon':
+      response = open("https://amazon.com/");
+      break;
+    case 'ebay':
+      response = open("https://ebay.com/");
+      break;
+    case 'walmart':
+      response = open("https://walmart.com/");
+      break;
+    case 'target':
+      response = open("https://target.com/");
+      break;
+    case 'bestbuy':
+      response = open("https://bestbuy.com/");
+      break;
+    case 'gamestop':
+      response = open("https://gamestop.com/");
+      break;
+    case 'newegg':
+      response = open("https://newegg.com/");
+      break;
+    case 'microcenter':
+      response = open("https://microcenter.com/");
+      break;
+    case 'time':
+      const currentDate = new Date();
+      response = "Current time: " + currentDate.toLocaleString();
+      break;
+    case 'clear':
+      location.reload(); // refresh page
+      break;
+    case 'back':
+      response = open("https://piqle.org/");
+      break;
+    case 'exit':
+      window.close();
+      break;
+    default:
+      response = "Command not recognized. Type help for a list of available commands.";
+  }
+
+  displayResponse(response);
+}
+
+function displayResponse(text) {
+  const newLine = document.createElement('div');
+  newLine.textContent = text;
+  outputArea.appendChild(newLine);
+}
+
+</script>
